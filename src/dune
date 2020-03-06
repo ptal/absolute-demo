@@ -1,0 +1,11 @@
+(executable
+ (name nqueens)
+ (public_name nqueens)
+ (modules :standard)
+ (ocamlopt_flags (:standard -O3))
+ (libraries
+    absolute absolute.core absolute.bounds
+    absolute.lang absolute.lang.typing absolute.fixpoint
+    absolute.domains absolute.box
+    absolute.direct_product absolute.event_loop absolute.propagator_completion)
+)

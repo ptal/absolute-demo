@@ -1,0 +1,32 @@
+url {
+  src: "https://github.com/ptal/absolute-demo/zipball/v0.1.0"
+}
+opam-version: "2.0"
+maintainer: "Pierre Talbot <pierre.talbot@univ-nantes.fr>"
+authors: [
+  "Pierre Talbot <pierre.talbot@univ-nantes.fr>"
+]
+homepage: "https://github.com/ptal/absolute-demo"
+bug-reports: "https://github.com/ptal/absolute-demo/issues"
+dev-repo: "git+https://github.com/ptal/absolute-demo"
+license: "LGPL"
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+run-test: [
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+depends: [
+  "dune" {build}
+  "ocaml" {>= "4.09.0"}
+  "extlib"
+  "containers"
+  "minisatml"
+  "mlgmpidl"
+  "mtime"
+  "alcotest" {with-test}
+]
+
+synopsis: "Demo of AbSolute solver"
+description: "Demo for the tutorial of AbSolute. It sets a full project to solve a constraint satisfaction problem."
